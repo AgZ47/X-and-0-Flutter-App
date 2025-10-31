@@ -7,27 +7,12 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'X and 0 App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
       ),
       home: const MyHomePage(title: 'X AND O'),
@@ -37,15 +22,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -77,7 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       }
     }
-    print("Draw!");
     t = "Draw!";
     loop=0;
     return;
@@ -93,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     }
     if(b == 1){
-      print("$f has won");
       if(f == 1){
         t = "X has Won!";
       }
@@ -112,7 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     }
     if(b == 1){
-      print("$f has won");
       if(f == 1){
         t = "X has Won!";
       }
@@ -126,7 +99,6 @@ class _MyHomePageState extends State<MyHomePage> {
     if((row == 0 && col == 0) || (row == 0 && col == 2) || (row == 1 && col == 1) 
     || (row == 2 && col == 0) || (row == 2 && col == 2)){
       if((table[0][0] == f)&&(table[1][1] == f)&&(table[2][2] == f)){
-        print("$f has won");
         if(f == 1){
           t = "X has Won!";
         }
@@ -137,7 +109,6 @@ class _MyHomePageState extends State<MyHomePage> {
         return;
       }
       else if((table[0][2] == f)&&(table[1][1] == f)&&(table[2][0] == f)){
-        print("$f has won");
         if(f == 1){
           t = "X has Won!";
         }
@@ -187,21 +158,13 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: const Color.fromARGB(255, 25, 25, 25),
         title: Center(child: Text(widget.title, style: TextStyle(color: const Color.fromARGB(255, 196, 196, 196), fontWeight: FontWeight.bold),),),
       ),
-      // 1. We use a Column to stack the grid and the button vertically.
       body: Column(
         children: [
-          // 2. This Expanded widget takes up all available space,
-          //    pushing the button (which is after it) to the bottom.
           Expanded(
-            // 3. We center the GridView within the expanded space.
             child: Center(
               child: GridView.count(
-                // 4. IMPORTANT: This tells the grid to only take up
-                //    as much space as its children need. It's
-                //    necessary when a GridView is inside a Column.
                 shrinkWrap: true, 
                 
-                // Optional: Disables scrolling on the grid itself
                 physics: const NeverScrollableScrollPhysics(), 
 
                 crossAxisCount: 3,
@@ -223,13 +186,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   return ElevatedButton(
                     onPressed: () {
-                      // 5. FIXED: Called the function without the 'flag'
-                      //    parameter, as we discussed previously.
                       _incrementCounter(row, col,flag);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: const RoundedRectangleBorder(),
-                      padding: const EdgeInsets.all(32.0), // Adjust size
+                      padding: const EdgeInsets.all(32.0),
                       side: BorderSide(color: const Color.fromARGB(255, 95, 95, 95), width: 1),
                       backgroundColor: const Color.fromARGB(255, 33, 33, 33),
                     ),
@@ -243,13 +204,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           loop==0 ? Text(t, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white)) : Text(""),
-          // 6. This is your new button at the bottom.
-          //    It's outside the 'Expanded' widget.
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                // Make the button stretch wide
                 minimumSize: const Size(double.infinity, 50),
                 side: BorderSide(color: const Color.fromARGB(255, 95, 95, 95), width: 1),
                 backgroundColor: const Color.fromARGB(255, 33, 33, 33),
