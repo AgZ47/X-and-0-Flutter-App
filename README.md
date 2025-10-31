@@ -1,6 +1,5 @@
 Hello\! This is a simple **Tic-Tac-Toe (X and O)** game built with Flutter. Here is the `README.md` file to help guide you in running the app on your device.
 
-````markdown
 # ❌ O App (Tic-Tac-Toe)
 
 A simple, dark-themed Tic-Tac-Toe game built using Flutter.
