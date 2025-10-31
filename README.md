@@ -88,6 +88,8 @@ The game state is managed in the `_MyHomePageState` class:
 
 <!-- end list -->
 
-<img width="1080" height="2400" alt="Image" src="https://github.com/user-attachments/assets/d7db9ab3-2d85-4420-bb5c-e2d03b68bb2b" />
-<img width="1080" height="2400" alt="2" src="https://github.com/user-attachments/assets/1cb5a2aa-60f5-47f8-96f3-d59c694dbf7e" />
+<img width="225" height="500" alt="Image" src="https://github.com/user-attachments/assets/d7db9ab3-2d85-4420-bb5c-e2d03b68bb2b" />
+<img width="225" height="500" alt="2" src="https://github.com/user-attachments/assets/1cb5a2aa-60f5-47f8-96f3-d59c694dbf7e" />
+<img width="225" height="500" alt="3" src="https://github.com/user-attachments/assets/ac93956e-a97f-4ca4-b16e-ae60806de6e6" />
+
 
