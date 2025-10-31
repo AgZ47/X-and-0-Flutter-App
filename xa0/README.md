@@ -88,5 +88,3 @@ The game state is managed in the `_MyHomePageState` class:
   * `_incrementCounter(int row, int col, int input_flag)`: The main logic for handling a tap on the grid.
 
 <!-- end list -->
-
-```
