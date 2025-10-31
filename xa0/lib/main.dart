@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
       ),
-      home: const MyHomePage(title: 'X and O'),
+      home: const MyHomePage(title: 'X AND O'),
     );
   }
 }
@@ -163,14 +163,18 @@ class _MyHomePageState extends State<MyHomePage> {
         table[row][col] = 1;
         flag = 1;
         match(flag, row, col);
-        fill();
+        if(loop == 1){
+          fill();
+        }
       }
       else if(input_flag == 1 && table[row][col] == -1 && loop==1){
         //array location updated to show 0
         table[row][col] = 0;
         flag = 0;
         match(flag, row, col);
-        fill();
+        if(loop == 1){
+          fill();
+        }
       }
     });
   }
@@ -178,10 +182,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 33, 33, 33),
+      backgroundColor: const Color.fromARGB(255, 25, 25, 25),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 33, 33, 33),
-        title: Center(child: Text(widget.title, style: TextStyle(color: Colors.white),)),
+        backgroundColor: const Color.fromARGB(255, 25, 25, 25),
+        title: Center(child: Text(widget.title, style: TextStyle(color: const Color.fromARGB(255, 196, 196, 196), fontWeight: FontWeight.bold),),),
       ),
       // 1. We use a Column to stack the grid and the button vertically.
       body: Column(
@@ -226,12 +230,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: ElevatedButton.styleFrom(
                       shape: const RoundedRectangleBorder(),
                       padding: const EdgeInsets.all(32.0), // Adjust size
-                      side: BorderSide(color: Colors.white, width: 2),
+                      side: BorderSide(color: const Color.fromARGB(255, 95, 95, 95), width: 1),
                       backgroundColor: const Color.fromARGB(255, 33, 33, 33),
                     ),
                     child: Text(
                       buttonText,
-                      style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+                      style: buttonText=='O' ? TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.blue):TextStyle(fontSize: 48, fontWeight: FontWeight.bold, color: Colors.red),
                     ),
                   );
                 }),
@@ -247,11 +251,11 @@ class _MyHomePageState extends State<MyHomePage> {
               style: ElevatedButton.styleFrom(
                 // Make the button stretch wide
                 minimumSize: const Size(double.infinity, 50),
-                side: BorderSide(color: Colors.white, width: 2),
+                side: BorderSide(color: const Color.fromARGB(255, 95, 95, 95), width: 1),
                 backgroundColor: const Color.fromARGB(255, 33, 33, 33),
               ),
               onPressed: () {_reset();},
-              child: const Text("Reset Game"),
+              child: const Text("Reset Game", style: TextStyle(color:Color.fromARGB(255, 196, 196, 196))),
             ),
           ),
         ],
