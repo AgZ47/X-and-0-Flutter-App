@@ -90,8 +90,3 @@ The game state is managed in the `_MyHomePageState` class:
 <!-- end list -->
 
 ```
-
----
-
-Would you like to know how the win-checking logic (`match` function) works, or do you have another request for this app?
-```
